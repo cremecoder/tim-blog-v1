@@ -6,7 +6,7 @@ const Post = ({ story }) => {
 
   return (
     <>
-      {/* <pre>{JSON.stringify(story, null, 2)}</pre> */}
+      <pre>{JSON.stringify(story, null, 2)}</pre>
       <DynamicComponent blok={story.content} />
     </>
   )
@@ -19,8 +19,6 @@ export async function getStaticPaths() {
     starts_with: "posts/",
     version: "draft"
   })
-
-  // console.log(data)
 
   let paths = []
   Object.keys(data.links).forEach(linkKey => {

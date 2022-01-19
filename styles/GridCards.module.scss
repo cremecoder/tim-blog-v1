@@ -1,0 +1,20 @@
+@import "./abstracts/mixins";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  @include container(desktop, 1rem, 1rem);
+
+  @include respond(tab-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(tab-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

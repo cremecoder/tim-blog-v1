@@ -1,0 +1,36 @@
+$tablet-sm: 400px;
+$tablet-lg: 768px;
+$desktop: 1024px;
+
+@mixin container($max-width, $pt, $pb) {
+  @if $max-width == tab-sm {
+    max-width: $tablet-sm;
+  }
+  @if $max-width == tab-lg {
+    max-width: $tablet-lg;
+  }
+  @if $max-width == desktop {
+    max-width: $desktop;
+  }
+
+  padding: $pt 1rem $pb;
+  margin: 0 auto;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tab-sm {
+    @media (min-width: $tablet-sm) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lg {
+    @media (min-width: $tablet-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}

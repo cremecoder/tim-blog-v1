@@ -1,9 +1,13 @@
 import Head from "next/head"
 import Storyblok, { useStoryblok } from "../lib/storyblok"
 
-import DynamicComponent from "../components/DynamicComponent"
+import Navbar from "../components/Navbar"
+import Card from "../components/Card"
+import Footer from "../components/Footer"
 
-export default function Home({ story }) {
+import styles from "../styles/GridCards.module.scss"
+
+export default function Home({ story, urls }) {
   story = useStoryblok(story, true) // preview from getStaticProps to enableBridge
 
   return (
@@ -11,23 +15,52 @@ export default function Home({ story }) {
       <Head>
         <title>{story ? story.name : "My Site"}</title>
       </Head>
-      <div>
+      <div id="page-wrapper">
+        <Navbar />
         {/* <pre>{JSON.stringify(story, null, 2)}</pre> */}
-        <DynamicComponent blok={story.content} />
-        {/* <h1>Home page</h1> */}
+        {/* <pre>{JSON.stringify(urls, null, 2)}</pre> */}
+        <div className={styles.grid}>
+          {urls.map(post => (
+            <Card key={post.id} slug={post.slug} />
+          ))}
+        </div>
+        <Footer />
       </div>
     </>
   )
 }
 
 export async function getStaticProps() {
-  let { data } = await Storyblok.get("cdn/stories/home", {
+  let getStory = await Storyblok.get("cdn/stories/home", {
     version: "draft"
+  })
+
+  let getPostURLS = await Storyblok.get("cdn/links/", {
+    starts_with: "posts/",
+    version: "draft"
+  })
+
+  let urls = []
+  Object.keys(getPostURLS.data.links).forEach(linkKey => {
+    if (
+      getPostURLS.data.links[linkKey].is_folder ||
+      getPostURLS.data.links[linkKey].slug === "home"
+    ) {
+      return
+    }
+
+    const slug = getPostURLS.data.links[linkKey].slug
+    const id = getPostURLS.data.links[linkKey].id
+    urls.push({
+      slug,
+      id
+    })
   })
 
   return {
     props: {
-      story: data.story
+      story: getStory.data.story,
+      urls
     },
     revalidate: 3600
   }
