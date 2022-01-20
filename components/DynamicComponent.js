@@ -1,9 +1,17 @@
 import Page from "./SB_ContentTypes/Page"
+import Post from "./SB_ContentTypes/Post"
+import ImageBlock from "./SB_Nestable/ImageBlock"
+import RichText from "./SB_Nestable/RichText"
+import SubHeading from "./SB_Nestable/SubHeading"
 import TextBlock from "./SB_Nestable/TextBlock"
 
 // resolve Storyblok components to Next.js components
 const Components = {
   page: Page,
+  post: Post,
+  image: ImageBlock,
+  "rich-text": RichText,
+  "sub-heading": SubHeading,
   "text-block": TextBlock
 }
 

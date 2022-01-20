@@ -1,13 +1,35 @@
+import Head from "next/head"
 import Storyblok, { useStoryblok } from "../../lib/storyblok"
 import DynamicComponent from "../../components/DynamicComponent"
+
+import Navbar from "../../components/Navbar"
+import Hero from "../../components/Hero"
+import Footer from "../../components/Footer"
+
+import styles from "../../styles/PostBody.module.scss"
 
 const Post = ({ story }) => {
   story = useStoryblok(story, true) // preview from getStaticProps to enableBridge
 
   return (
     <>
-      <pre>{JSON.stringify(story, null, 2)}</pre>
-      <DynamicComponent blok={story.content} />
+      <Head>
+        <title>{story ? `TimTim - ${story.name}` : "Post"}</title>
+      </Head>
+      <div id="page-wrapper">
+        <Navbar />
+        <main>
+          <Hero content={story.content} />
+          <div className={styles.container}>
+            {story.content.body
+              ? story.content.body.map(blok => (
+                  <DynamicComponent blok={blok} key={blok._uid} />
+                ))
+              : null}
+          </div>
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

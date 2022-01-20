@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar"
 import Card from "../components/Card"
 import Footer from "../components/Footer"
 
-import styles from "../styles/GridCards.module.scss"
+import styles from "../styles/HomeCards.module.scss"
 
 export default function Home({ story, urls }) {
   story = useStoryblok(story, true) // preview from getStaticProps to enableBridge
@@ -13,17 +13,22 @@ export default function Home({ story, urls }) {
   return (
     <>
       <Head>
-        <title>{story ? story.name : "My Site"}</title>
+        <title>{story ? `TimTim - ${story.name}` : "TimTim Blog"}</title>
       </Head>
       <div id="page-wrapper">
         <Navbar />
-        {/* <pre>{JSON.stringify(story, null, 2)}</pre> */}
-        {/* <pre>{JSON.stringify(urls, null, 2)}</pre> */}
-        <div className={styles.grid}>
-          {urls.map(post => (
-            <Card key={post.id} slug={post.slug} />
-          ))}
-        </div>
+        {!urls.length ? (
+          <main className={styles["no-cards"]}>
+            Welcome to your blog Timi!
+            <br /> Get started with your first post.
+          </main>
+        ) : (
+          <main className={styles.grid}>
+            {urls.map(post => (
+              <Card key={post.id} slug={post.slug} />
+            ))}
+          </main>
+        )}
         <Footer />
       </div>
     </>
@@ -64,4 +69,11 @@ export async function getStaticProps() {
     },
     revalidate: 3600
   }
+}
+
+{
+  /* <pre>{JSON.stringify(story, null, 2)}</pre> */
+}
+{
+  /* <pre>{JSON.stringify(urls, null, 2)}</pre> */
 }

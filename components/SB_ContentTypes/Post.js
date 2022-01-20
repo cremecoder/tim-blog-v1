@@ -1,6 +1,6 @@
 import DynamicComponent from "../DynamicComponent"
 
-const Page = ({ blok }) => (
+const Post = ({ blok }) => (
   <>
     {blok.body
       ? blok.body.map(blok => <DynamicComponent blok={blok} key={blok._uid} />)
@@ -8,4 +8,4 @@ const Page = ({ blok }) => (
   </>
 )
 
-export default Page
+export default Post
