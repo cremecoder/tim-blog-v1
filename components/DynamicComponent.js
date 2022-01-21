@@ -1,5 +1,6 @@
 import Page from "./SB_ContentTypes/Page"
 import Post from "./SB_ContentTypes/Post"
+import AllPostsGrid from "./SB_Nestable/AllPostsGrid"
 import ImageBlock from "./SB_Nestable/ImageBlock"
 import RichText from "./SB_Nestable/RichText"
 import SubHeading from "./SB_Nestable/SubHeading"
@@ -9,6 +10,7 @@ import TextBlock from "./SB_Nestable/TextBlock"
 const Components = {
   page: Page,
   post: Post,
+  "all-posts": AllPostsGrid,
   image: ImageBlock,
   "rich-text": RichText,
   "sub-heading": SubHeading,

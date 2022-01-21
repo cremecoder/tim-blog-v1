@@ -5,7 +5,7 @@ import styles from "../../styles/ImageBlock.module.scss"
 const ImageBlock = ({ blok }) => {
   return (
     <section {...sbEditable(blok)}>
-      <div className={styles.container}>
+      <div className={styles.image}>
         <Image
           src={blok.image.filename || "/logo.svg"}
           width={50}
