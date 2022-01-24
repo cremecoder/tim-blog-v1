@@ -2,18 +2,18 @@ import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Card.module.scss"
 
-const Card = ({ post }) => {
+const Card = ({ blok }) => {
+  console.log(blok.content)
   const {
     full_slug,
-    content: { image, colour, date, week, title, tag }
-  } = post
-
+    content: { colour, date, image, tag, title, week }
+  } = blok
   return (
-    <Link href={"/" + full_slug}>
+    <Link href={full_slug || "/"}>
       <div className={styles.card}>
         <div className={styles.image}>
           <Image
-            src={"/logo.svg"}
+            src={image.filename || "/logo.svg"}
             width={50}
             height={35}
             layout="responsive"
@@ -26,7 +26,7 @@ const Card = ({ post }) => {
         >
           <div className={styles.top}>
             <h4 className={styles.date}>{date || Date.now()}</h4>
-            <h4 className={styles.week}>{`WEEK #${week || "0"}`}</h4>
+            <h4 className={styles.week}>{`WEEK #${week || 0}`}</h4>
             <h2 className={styles.name}>{title}</h2>
           </div>
           <div className={styles.bottom}>
