@@ -4,7 +4,6 @@ import AllPostsGrid from "./SB_Nestable/AllPostsGrid"
 import ImageBlock from "./SB_Nestable/ImageBlock"
 import RichText from "./SB_Nestable/RichText"
 import SubHeading from "./SB_Nestable/SubHeading"
-import TextBlock from "./SB_Nestable/TextBlock"
 
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -13,8 +12,7 @@ const Components = {
   "all-posts": AllPostsGrid,
   image: ImageBlock,
   "rich-text": RichText,
-  "sub-heading": SubHeading,
-  "text-block": TextBlock
+  "sub-heading": SubHeading
 }
 
 const DynamicComponent = ({ blok }) => {

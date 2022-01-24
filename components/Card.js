@@ -13,7 +13,7 @@ const Card = ({ post }) => {
       <div className={styles.card}>
         <div className={styles.image}>
           <Image
-            src={image.filename || "/logo.svg"}
+            src={"/logo.svg"}
             width={50}
             height={35}
             layout="responsive"

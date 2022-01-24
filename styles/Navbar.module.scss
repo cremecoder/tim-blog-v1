@@ -5,7 +5,6 @@
   color: #ffffff;
 
   .container {
-    // @include container(desktop, 1rem, 0);
     @include container(desktop, 1rem, 1rem);
     display: flex;
     flex-direction: column;
@@ -15,7 +14,6 @@
     }
 
     @include respond(desktop) {
-      // @include container(desktop, 1rem, 1rem);
       flex-direction: row;
       justify-content: space-between;
 
@@ -60,8 +58,5 @@
     @include respond(desktop) {
       font-size: 46px;
     }
-  }
-
-  .text {
   }
 }

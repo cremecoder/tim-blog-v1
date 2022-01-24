@@ -9,7 +9,7 @@ import Footer from "../../components/Footer"
 import styles from "../../styles/PostBody.module.scss"
 
 const Post = ({ story }) => {
-  story = useStoryblok(story, true) // preview from getStaticProps to enableBridge
+  story = useStoryblok(story, true)
 
   return (
     <>
