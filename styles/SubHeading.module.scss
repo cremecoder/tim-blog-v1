@@ -1,10 +1,13 @@
 @import "./abstracts/mixins";
 
-.text {
-  font-size: 20px;
-  padding: 1rem 0;
+.container {
+  @include container(tab-lg, 1rem, 0.25rem);
 
-  @include respond(tab-lg) {
-    font-size: 30px;
+  .text {
+    font-size: 20px;
+
+    @include respond(tab-lg) {
+      font-size: 30px;
+    }
   }
 }

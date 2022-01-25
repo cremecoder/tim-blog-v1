@@ -1,19 +1,16 @@
 import Image from "next/image"
 import styles from "../styles/Hero.module.scss"
 
-const Hero = ({
-  content,
-  content: { date, week, image, title, colour, intro_text }
-}) => {
+const Hero = ({ blok }) => {
+  const { date, image, title, colour, category, intro_text } = blok
+  let newDate = new Date(date).toLocaleDateString().replaceAll("/", "-")
+
   return (
     <section className={styles.hero}>
-      <div
-        className={styles.color}
-        style={{ backgroundColor: colour || "#cdd0d4" }}
-      ></div>
+      <div className={styles.color} style={{ backgroundColor: colour }}></div>
       <div className={styles.container}>
         <Image
-          src={image.filename || "/logo.svg"}
+          src={image.filename}
           width={50}
           height={30}
           layout="responsive"
@@ -21,11 +18,11 @@ const Hero = ({
         />
 
         <div className={styles.dates}>
-          <h4> {date || "DATE HERE..."}</h4>
-          <h4>{`WEEK #${week || 0}`}</h4>
+          <h4>{newDate}</h4>
+          <h4>{category ? category : ""}</h4>
         </div>
         <h1 className={styles.title}>{title}</h1>
-        <p className={styles.text}>{intro_text}</p>
+        <p className={styles.text}>{intro_text ? intro_text : ""}</p>
       </div>
     </section>
   )

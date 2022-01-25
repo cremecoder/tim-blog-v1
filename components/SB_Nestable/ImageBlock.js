@@ -1,16 +1,19 @@
 import Image from "next/image"
 import { sbEditable } from "@storyblok/storyblok-editable"
+import styles from "../../styles/ImageBlock.module.scss"
 
 const ImageBlock = ({ blok }) => {
   return (
-    <section style={{ padding: "1rem 0" }} {...sbEditable(blok)}>
-      <Image
-        src={blok.image.filename || "/logo.svg"}
-        width={50}
-        height={30}
-        layout="responsive"
-        alt="timtim"
-      />
+    <section {...sbEditable(blok)}>
+      <div className={styles.container}>
+        <Image
+          src={blok.image.filename || "/logo.svg"}
+          width={50}
+          height={30}
+          layout="responsive"
+          alt="timtim"
+        />
+      </div>
     </section>
   )
 }

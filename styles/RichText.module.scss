@@ -3,6 +3,7 @@
 
 .container {
   font-size: 16px;
+  @include container(tab-lg, 1rem, 1rem);
 
   @include respond(desktop) {
     font-size: 18px;
@@ -22,11 +23,6 @@
 
     li::marker {
       font-weight: $text-bold;
-      font-size: 18px;
-
-      @include respond(desktop) {
-        font-size: 20px;
-      }
     }
   }
 
