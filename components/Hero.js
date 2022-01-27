@@ -3,7 +3,6 @@ import styles from "../styles/Hero.module.scss"
 
 const Hero = ({ blok }) => {
   const { date, image, title, colour, category, intro_text } = blok
-  let newDate = new Date(date).toLocaleDateString().replaceAll("/", "-")
 
   return (
     <section className={styles.hero}>
@@ -18,7 +17,7 @@ const Hero = ({ blok }) => {
         />
 
         <div className={styles.dates}>
-          <h4>{newDate}</h4>
+          <h4>{date}</h4>
           <h4>{category ? category : ""}</h4>
         </div>
         <h1 className={styles.title}>{title}</h1>

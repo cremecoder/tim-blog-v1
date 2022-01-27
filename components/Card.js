@@ -8,8 +8,6 @@ const Card = ({ cardDetails }) => {
     content: { colour, date, image, tag, title, category }
   } = cardDetails
 
-  let newDate = new Date(date).toLocaleDateString().replaceAll("/", "-")
-
   return (
     <Link href={full_slug || "/"}>
       <div className={styles.card}>
@@ -24,8 +22,10 @@ const Card = ({ cardDetails }) => {
         </div>
         <div style={{ backgroundColor: colour }} className={styles.copy}>
           <div className={styles.top}>
-            <h4 className={styles.date}>{newDate}</h4>
-            {category ? <h4>{category}</h4> : null}
+            <h4 className={styles.small}>{date}</h4>
+            {category ? <h4 className={styles.small}>{category}</h4> : null}
+          </div>
+          <div className={styles.center}>
             <h2 className={styles.name}>{title}</h2>
           </div>
           <div className={styles.bottom}>
