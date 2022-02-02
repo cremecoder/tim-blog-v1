@@ -6,9 +6,9 @@ import styles from "../../styles/AllPostsGrid.module.scss"
 const AllPostsGrid = ({ blok }) => {
   return (
     <div className={styles.grid} {...sbEditable(blok)}>
-      {blok.posts.map(post => (
-        <Card cardDetails={post} key={post.uuid} />
-      ))}
+      {blok.posts
+        ? blok.posts.map(post => <Card cardDetails={post} key={post.uuid} />)
+        : null}
     </div>
   )
 }

@@ -15,7 +15,6 @@ export default function Home({ story }) {
       </Head>
       <div id="page-wrapper">
         <Navbar />
-        {/* <pre>{JSON.stringify(story, null, 4)}</pre> */}
         <DynamicComponent blok={story.content} />
         <Footer />
       </div>

@@ -32,13 +32,10 @@
       flex-basis: 75%;
       display: flex;
       flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
       margin: 1rem 0;
 
       .name {
         font-size: 30px;
-        // flex-basis: 100%;
 
         @include respond(tab-sm) {
           font-size: 22px;

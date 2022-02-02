@@ -1,0 +1,27 @@
+@import "./abstracts/mixins";
+
+.selected {
+  background-color: #0000000a;
+  padding-bottom: 3rem;
+
+  .text {
+    text-align: center;
+    padding: 2rem;
+    font-size: 20px;
+
+    @include respond(desktop) {
+      font-size: 30px;
+    }
+  }
+
+  .slider {
+    @include container(tab-sm, 1rem, 1rem);
+  }
+
+  .card {
+    flex-basis: 100%;
+  }
+
+  .hidden {
+  }
+}

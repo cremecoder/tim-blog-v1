@@ -4,6 +4,7 @@ import AllPostsGrid from "./SB_Nestable/AllPostsGrid"
 import ImageBlock from "./SB_Nestable/ImageBlock"
 import QuoteBlock from "./SB_Nestable/QuoteBlock"
 import RichText from "./SB_Nestable/RichText"
+import SelectedPosts from "./SB_Nestable/SelectedPosts"
 import SubHeading from "./SB_Nestable/SubHeading"
 
 // resolve Storyblok components to Next.js components
@@ -14,6 +15,7 @@ const Components = {
   image: ImageBlock,
   "quote-block": QuoteBlock,
   "rich-text": RichText,
+  "selected-posts": SelectedPosts,
   "sub-heading": SubHeading
 }
 
