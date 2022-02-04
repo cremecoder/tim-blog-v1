@@ -8,6 +8,13 @@ const Card = ({ cardDetails }) => {
     content: { colour, date, image, tag, title, category }
   } = cardDetails
 
+  function formatDate(str) {
+    let removeTime = [...str].splice(0, 10)
+    removeTime.splice(0, 2)
+
+    return removeTime.join("")
+  }
+
   return (
     <Link href={full_slug || "/"}>
       <div className={styles.card}>
@@ -22,7 +29,7 @@ const Card = ({ cardDetails }) => {
         </div>
         <div style={{ backgroundColor: colour }} className={styles.copy}>
           <div className={styles.top}>
-            <h4 className={styles.small}>{date}</h4>
+            <h4 className={styles.small}>{formatDate(date)}</h4>
             {category ? <h4 className={styles.small}>{category}</h4> : null}
           </div>
           <div className={styles.center}>

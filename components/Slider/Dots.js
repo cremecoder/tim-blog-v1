@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import styles from "../../styles/Dots.module.scss"
 
 const Dots = ({ posts }) => {
