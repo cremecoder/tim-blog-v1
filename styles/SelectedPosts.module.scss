@@ -2,7 +2,6 @@
 
 .selected {
   background-color: #0000000a;
-  padding-bottom: 3rem;
 
   .text {
     text-align: center;
@@ -12,16 +11,5 @@
     @include respond(desktop) {
       font-size: 30px;
     }
-  }
-
-  .slider {
-    @include container(tab-sm, 1rem, 1rem);
-  }
-
-  .card {
-    flex-basis: 100%;
-  }
-
-  .hidden {
   }
 }

@@ -1,0 +1,9 @@
+@import "./abstracts/mixins";
+
+.slider {
+  @include container(tab-sm, 1rem, 1rem);
+
+  @include respond(desktop) {
+    @include container(tab-lg, 1rem, 1rem);
+  }
+}

@@ -1,40 +1,28 @@
-import { useState } from "react"
+// import { useState, useEffect } from "react"
 import { sbEditable } from "@storyblok/storyblok-editable"
-import Card from "../Card"
+import Slider from "../Slider/Slider"
 
 import styles from "../../styles/SelectedPosts.module.scss"
 
+// width check here dynamic import, useEffect and window object
+
 const SelectedPosts = ({ blok }) => {
-  const [current, setCurrent] = useState(0)
-  const length = blok.posts.length
+  // const [size, setSize] = useState([window.innerHeight, window.innerWidth])
+  // const [height, width] = size
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
-  }
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setSize([window.innerHeight, window.innerWidth])
+  //   }
+  //   window.addEventListener("resize", handleResize)
+  //   return () => window.removeEventListener("resize", handleResize)
+  // }, [])
 
   return (
     <section className={styles.selected} {...sbEditable(blok)}>
       <h2 className={styles.text}>MORE...</h2>
-      <button onClick={prevSlide}>Prev</button>
-      <div className={styles.slider}>
-        {blok.posts
-          ? blok.posts.map((post, index) => (
-              <div
-                className={index === current ? styles.hidden : styles.card}
-                key={index}
-              >
-                {index === current && (
-                  <Card cardDetails={post} key={post.uuid} />
-                )}
-              </div>
-            ))
-          : null}
-      </div>
-      <button onClick={nextSlide}>Next</button>
+      {/* If width > ... then ... else ... */}
+      <Slider posts={blok.posts} />
     </section>
   )
 }

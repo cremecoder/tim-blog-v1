@@ -1,0 +1,21 @@
+@import "../styles/abstracts/mixins";
+
+.content {
+  overflow: scroll;
+  display: grid;
+  grid-gap: 1rem;
+
+  @include respond(desktop) {
+    overflow: hidden;
+    display: flex;
+
+    & > * {
+      flex-basis: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  & > div > * {
+    height: 100%;
+  }
+}

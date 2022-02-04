@@ -1,0 +1,26 @@
+@import "../styles/abstracts/mixins";
+
+.group {
+  @include container(tab-sm, 1rem, 1rem);
+  text-align: center;
+
+  // @include respond(desktop) {
+  //   visibility: hidden;
+  // }
+}
+
+.dot {
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0 6px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #000;
+}
+
+.active-dot,
+.dot:hover {
+  background-color: #000;
+}
