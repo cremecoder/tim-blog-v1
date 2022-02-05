@@ -2,6 +2,9 @@ import Head from "next/head"
 import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from "../components/DynamicComponent"
 
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+
 export default function Home({ story }) {
   story = useStoryblok(story, true)
 
@@ -10,7 +13,11 @@ export default function Home({ story }) {
       <Head>
         <title>{story ? `TimTim - ${story.name}` : "TimTim Blog"}</title>
       </Head>
-      <DynamicComponent blok={story.content} />
+      <div id="page-wrapper">
+        <Navbar />
+        <DynamicComponent blok={story.content} />
+        <Footer />
+      </div>
     </>
   )
 }

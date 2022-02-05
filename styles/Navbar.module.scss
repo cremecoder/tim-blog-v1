@@ -28,6 +28,10 @@
     justify-content: space-between;
     align-items: center;
 
+    & > * {
+      cursor: pointer;
+    }
+
     @include respond(desktop) {
       & > :nth-child(2) {
         visibility: hidden;
@@ -66,5 +70,10 @@
     @include respond(desktop) {
       display: block;
     }
+  }
+
+  .icon {
+    padding-top: 1rem;
+    cursor: pointer;
   }
 }
