@@ -25,7 +25,7 @@ const Hero = ({ blok }) => {
 
         <div className={styles.dates}>
           <h4>{formatDate(date)}</h4>
-          <h4>{category ? category : ""}</h4>
+          <h4>{category ? category : null}</h4>
         </div>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.text}>{intro_text ? intro_text : ""}</p>
