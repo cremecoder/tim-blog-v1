@@ -6,10 +6,14 @@ const Navbar = () => {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div className={styles.images}>
-          <a href="/" target="_blank">
+          <a href="/" rel="noreferrer">
             <Image src="/logo.svg" width={37} height={51} alt="timtim" />
           </a>
-          <a href="https://www.instagram.com/tim.tim.tim.tim/" target="_blank">
+          <a
+            href="https://www.instagram.com/tim.tim.tim.tim/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
               src="/instagram.svg"
               width={23}
@@ -22,7 +26,11 @@ const Navbar = () => {
           <h1 className={styles.title}>BEHIND THE SCENES</h1>
         </div>
         <div className={styles.icon}>
-          <a href="https://www.instagram.com/tim.tim.tim.tim/" target="_blank">
+          <a
+            href="https://www.instagram.com/tim.tim.tim.tim/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
               src="/instagram.svg"
               width={23}

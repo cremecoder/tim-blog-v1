@@ -9,7 +9,7 @@ const QuoteBlock = ({ blok }) => {
           <h3>{blok.quote}</h3>
         </blockquote>
         <figcaption>
-          - {blok.author}, <cite>{blok.cite}</cite>
+          {blok.author} <cite>{blok.cite}</cite>
         </figcaption>
       </div>
     </figure>

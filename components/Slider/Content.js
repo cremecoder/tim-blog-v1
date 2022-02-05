@@ -10,7 +10,7 @@ function Content({ posts }) {
           posts.length <= 1 ? "100%" : `repeat(${posts.length}, 75%)`
       }}
     >
-      {posts.map((post, index) => (
+      {posts.map(post => (
         <div className={styles.center} key={post.id}>
           <Card cardDetails={post} />
         </div>

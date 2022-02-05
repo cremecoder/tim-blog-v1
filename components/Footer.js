@@ -6,7 +6,11 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.social}>
-          <a href="https://www.instagram.com/tim.tim.tim.tim/" target="_blank">
+          <a
+            href="https://www.instagram.com/tim.tim.tim.tim/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src="/instagram.svg" width={37} height={37} alt="timtim" />
           </a>
           <h3 className={styles.bold}>@tim.tim.tim.tim</h3>
@@ -17,6 +21,7 @@ const Footer = () => {
             className={styles.link}
             href="https://www.linkedin.com/in/sean-martin-cremecoder/"
             target="_blank"
+            rel="noreferrer"
           >
             Sean Martin
           </a>

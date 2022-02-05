@@ -6,7 +6,7 @@ const Dots = ({ posts }) => {
       className={styles.group}
       style={{ visibility: posts.length <= 1 ? "hidden" : "visible" }}
     >
-      {posts.map((post, index) => (
+      {posts.map(post => (
         <span key={post.uuid} className={styles.dot}></span>
       ))}
     </div>
