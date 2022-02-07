@@ -5,7 +5,8 @@ import styles from "../styles/Card.module.scss"
 const Card = ({ cardDetails }) => {
   const {
     full_slug,
-    content: { colour, date, image, tag, title, category }
+    created_at,
+    content: { colour, image, tag, title, category }
   } = cardDetails
 
   function formatDate(str) {
@@ -29,7 +30,7 @@ const Card = ({ cardDetails }) => {
         </div>
         <div style={{ backgroundColor: colour }} className={styles.copy}>
           <div className={styles.top}>
-            <h4 className={styles.small}>{formatDate(date)}</h4>
+            <h4 className={styles.small}>{formatDate(created_at)}</h4>
             {category ? <h4 className={styles.small}>{category}</h4> : null}
           </div>
           <div className={styles.center}>

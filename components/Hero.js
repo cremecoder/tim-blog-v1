@@ -2,14 +2,7 @@ import Image from "next/image"
 import styles from "../styles/Hero.module.scss"
 
 const Hero = ({ blok }) => {
-  const { date, image, title, colour, category, intro_text } = blok
-
-  function formatDate(str) {
-    let removeTime = [...str].splice(0, 10)
-    removeTime.splice(0, 2)
-
-    return removeTime.join("")
-  }
+  const { image, title, colour, category, intro_text } = blok
 
   return (
     <section className={styles.hero}>
@@ -24,7 +17,6 @@ const Hero = ({ blok }) => {
         />
 
         <div className={styles.dates}>
-          <h4>{formatDate(date)}</h4>
           <h4>{category ? category : null}</h4>
         </div>
         <h1 className={styles.title}>{title}</h1>
