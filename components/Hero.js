@@ -6,10 +6,13 @@ const Hero = ({ blok }) => {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.color} style={{ backgroundColor: colour }}></div>
+      <div
+        className={styles.color}
+        style={{ backgroundColor: colour || "#e1e1e1" }}
+      ></div>
       <div className={styles.container}>
         <Image
-          src={image.filename}
+          src={image.filename || "/logo.svg"}
           width={50}
           height={30}
           layout="responsive"
@@ -19,8 +22,8 @@ const Hero = ({ blok }) => {
         <div className={styles.dates}>
           <h4>{category ? category : null}</h4>
         </div>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.text}>{intro_text ? intro_text : ""}</p>
+        <h1 className={styles.title}>{title.toUpperCase() || "POST TITLE"}</h1>
+        <p className={styles.text}>{intro_text ? intro_text : null}</p>
       </div>
     </section>
   )

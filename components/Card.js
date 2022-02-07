@@ -21,20 +21,25 @@ const Card = ({ cardDetails }) => {
       <div className={styles.card}>
         <div className={styles.image}>
           <Image
-            src={image.filename}
+            src={image.filename || "/logo.svg"}
             width={50}
             height={35}
             layout="responsive"
             alt="timtim"
           />
         </div>
-        <div style={{ backgroundColor: colour }} className={styles.copy}>
+        <div
+          style={{ backgroundColor: colour || "#e1e1e1" }}
+          className={styles.copy}
+        >
           <div className={styles.top}>
             <h4 className={styles.small}>{formatDate(created_at)}</h4>
-            {category ? <h4 className={styles.small}>{category}</h4> : null}
+            {category ? (
+              <h4 className={styles.small}>{category || null}</h4>
+            ) : null}
           </div>
           <div className={styles.center}>
-            <h2 className={styles.name}>{title}</h2>
+            <h2 className={styles.name}>{title.toUpperCase()}</h2>
           </div>
           <div className={styles.bottom}>
             {tag ? <span className={styles.tag}>{tag}</span> : "..."}

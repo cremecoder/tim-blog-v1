@@ -7,7 +7,6 @@ const SelectedPosts = ({ blok }) => {
   return (
     <section className={styles.selected} {...sbEditable(blok)}>
       <h2 className={styles.text}>MORE...</h2>
-
       <Slider posts={blok.posts} />
     </section>
   )

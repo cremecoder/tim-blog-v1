@@ -5,7 +5,9 @@ const SubHeading = ({ blok }) => {
   return (
     <section {...sbEditable(blok)}>
       <div className={styles.container}>
-        <h2 className={styles.text}>{blok.value}</h2>
+        <h2 className={styles.text}>
+          {blok.value.toUpperCase() || "SUB HEADING"}
+        </h2>
       </div>
     </section>
   )
