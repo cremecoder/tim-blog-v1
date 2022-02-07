@@ -11,7 +11,8 @@ export default function Home({ story }) {
   return (
     <>
       <Head>
-        <title>{story ? `TimTim - ${story.name}` : "TimTim Blog"}</title>
+        <title>{story ? `timtim blog - ${story.name}` : "timtim blog"}</title>
+        <link rel="icon" href="/logo.svg" />
       </Head>
       <div id="page-wrapper">
         <Navbar />
