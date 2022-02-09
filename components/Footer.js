@@ -19,7 +19,7 @@ const Footer = () => {
           Code by{" "}
           <a
             className={styles.link}
-            href="https://www.linkedin.com/in/sean-martin-cremecoder/"
+            href="https://seanmartin.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
