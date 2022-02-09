@@ -13,6 +13,7 @@ export default function Home({ story }) {
       <Head>
         <title>{story ? `timtim blog - ${story.name}` : "timtim blog"}</title>
         <link rel="icon" href="/logo.svg" />
+        <meta property="og:image" content="/images/timtim-blog.gif" />
       </Head>
       <div id="page-wrapper">
         <Navbar />
